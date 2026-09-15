@@ -76,8 +76,8 @@ body{
 .obstacle{
   position:absolute;bottom:13px;right:-90px;width:48px;height:58px;z-index:7;
 }
-.obstacle.overhead{bottom:-25px;height:42px;width:76px}
-.obstacle.overhead .cactus{bottom:0;left:0;width:76px;height:24px;border-radius:18px}
+.obstacle.overhead{bottom:95px;height:42px;width:76px;z-index:9}
+.obstacle.overhead .cactus{bottom:0;left:0;width:76px;height:24px;border-radius:18px;transform:rotate(180deg)}
 .obstacle.overhead .cactus:before{left:12px;top:18px;width:18px;height:18px}
 .obstacle.overhead .cactus:after{right:12px;top:18px;width:18px;height:18px}
 .cactus{
@@ -90,7 +90,7 @@ body{
 .obstacle.flowerpot .cactus:before,.obstacle.flowerpot .cactus:after{display:none}
 
 .jump{animation:jump .7s cubic-bezier(.2,.7,.3,1)}
-@keyframes jump{0%{bottom:13px}42%{bottom:300px}100%{bottom:13px}}45%{bottom:230px}100%{bottom:13px}}
+@keyframes jump{0%{bottom:13px}42%{bottom:300px}100%{bottom:13px}}
 
 #startScreen,#gameOver{
  position:absolute;z-index:30;inset:0;display:flex;align-items:center;justify-content:center;
