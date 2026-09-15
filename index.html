@@ -86,7 +86,7 @@ body{
 .obstacle.flowerpot .cactus:before,.obstacle.flowerpot .cactus:after{display:none}
 
 .jump{animation:jump .7s cubic-bezier(.2,.7,.3,1)}
-@keyframes jump{0%{bottom:13px}45%{bottom:230px}100%{bottom:13px}}
+@keyframes jump{0%{bottom:13px}42%{bottom:300px}100%{bottom:13px}}45%{bottom:230px}100%{bottom:13px}}
 
 #startScreen,#gameOver{
  position:absolute;z-index:30;inset:0;display:flex;align-items:center;justify-content:center;
@@ -329,11 +329,16 @@ const gameOver=document.getElementById('gameOver'), startScreen=document.getElem
 let running=false, score=0, speed=6, last=0, spawnTimer=0, obstacle=null;
 
 function jump(){
-  if(!running || girl.classList.contains('crouch')) return;
-  if(!girl.classList.contains('jump')){
-    girl.classList.add('jump'); boy.classList.add('jump');
-    setTimeout(()=>{girl.classList.remove('jump');boy.classList.remove('jump')},700);
-  }
+  if(!running) return;
+  girl.classList.remove('jump');
+  boy.classList.remove('jump');
+  void girl.offsetWidth;
+  girl.classList.add('jump');
+  boy.classList.add('jump');
+  setTimeout(()=>{
+    girl.classList.remove('jump');
+    boy.classList.remove('jump');
+  },800);
 }
 
 function setCrouch(on){
@@ -355,7 +360,7 @@ function makeObstacle(){
 function collision(){
   if(!obstacle) return false;
   const a=girl.getBoundingClientRect(), b=boy.getBoundingClientRect(), o=obstacle.getBoundingClientRect();
-  const hit=(r)=>r.right-13>o.left && r.left+13<o.right && r.bottom-12>o.top+10 && r.top+12<o.bottom;
+  const hit=(r)=>r.right-20>o.left+5 && r.left+20<o.right-5 && r.bottom-18>o.top+8 && r.top+18<o.bottom;
   return hit(a)||hit(b);
 }
 
