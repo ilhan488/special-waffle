@@ -264,10 +264,188 @@ button:active{transform:translateY(3px);box-shadow:0 2px 0 #a83e68}
 .dino.small .body::before{left:-11px !important}
 .dino.small .body::after{right:-11px !important}
 
+
+/* SMALLER CHARACTERS */
+.dino{
+  width:72px !important;
+  height:95px !important;
+  transform:scale(.72);
+  transform-origin:bottom left;
+}
+.dino.small{
+  transform:scale(.58) !important;
+  transform-origin:bottom left;
+}
+.dino .head{
+  width:58px !important;
+  height:58px !important;
+  left:18px !important;
+  top:4px !important;
+}
+.dino .ear.l{left:12px !important}
+.dino .ear.r{left:66px !important}
+.dino .name{font-size:9px !important;padding:2px 5px !important}
+
+
+/* KURUS / SLIM BODY */
+.dino .body{
+  width:58px !important;
+  height:68px !important;
+  left:24px !important;
+  border-radius:30px 34px 22px 22px !important;
+}
+.dino .body::before,
+.dino .body::after{
+  width:18px !important;
+  height:34px !important;
+  top:17px !important;
+  border-width:4px !important;
+}
+.dino .body::before{left:-10px !important}
+.dino .body::after{right:-10px !important}
+.dino .leg{
+  width:15px !important;
+  height:29px !important;
+  border-width:4px !important;
+}
+.dino .leg.l{left:31px !important}
+.dino .leg.r{left:60px !important}
+
+.dino.small .body{
+  width:52px !important;
+  height:58px !important;
+  left:24px !important;
+}
+.dino.small .body::before,
+.dino.small .body::after{
+  width:16px !important;
+  height:29px !important;
+}
+.dino.small .body::before{left:-9px !important}
+.dino.small .body::after{right:-9px !important}
+
+
+/* SLIM BODY, KEEP FACE SIZE 🩷 */
+.dino{
+  width:72px !important;
+  height:125px !important;
+}
+.dino .head{
+  width:64px !important;
+  height:64px !important;
+  left:22px !important;
+  top:0 !important;
+}
+.dino .body{
+  width:54px !important;
+  height:65px !important;
+  left:27px !important;
+  border-radius:30px 30px 18px 18px !important;
+}
+.dino .body::before,
+.dino .body::after{
+  width:17px !important;
+  height:34px !important;
+  top:14px !important;
+  border-width:3px !important;
+}
+.dino .body::before{left:-11px !important}
+.dino .body::after{right:-11px !important}
+.dino .tail{
+  width:30px !important;
+  height:22px !important;
+  left:6px !important;
+}
+.dino .leg{
+  width:15px !important;
+  height:28px !important;
+  border-width:3px !important;
+}
+.dino .leg.l{left:31px !important}
+.dino .leg.r{left:55px !important}
+.dino.small{
+  transform:scale(.58) !important;
+}
+
+
+/* LOTSO THEME BACKGROUND 🍓🩷 */
+body{
+  background:
+    radial-gradient(circle at 15% 18%, rgba(255,255,255,.75) 0 34px, transparent 35px),
+    radial-gradient(circle at 86% 14%, rgba(255,255,255,.7) 0 42px, transparent 43px),
+    linear-gradient(#ffb9d3 0%, #ffdbea 46%, #f6a9c7 100%) !important;
+}
+#game::before{
+  content:"🍓   🌸   🍓   🌷   🧸   🍓   🌸   🍓";
+  position:absolute;
+  z-index:1;
+  top:78px;
+  left:0;
+  width:100%;
+  text-align:center;
+  font-size:27px;
+  letter-spacing:8px;
+  opacity:.72;
+  white-space:nowrap;
+}
+#game::after{
+  content:"🍓  🌸  🌷  🍓  🌸  🍓  🌷  🧸  🍓  🌸  🍓";
+  position:absolute;
+  z-index:2;
+  bottom:67px;
+  left:0;
+  width:100%;
+  text-align:center;
+  font-size:25px;
+  letter-spacing:7px;
+  opacity:.85;
+  white-space:nowrap;
+  pointer-events:none;
+}
+#world{
+  background:
+    radial-gradient(circle at 10% 70%, rgba(255,255,255,.35) 0 24px, transparent 25px),
+    radial-gradient(circle at 80% 55%, rgba(255,255,255,.3) 0 30px, transparent 31px);
+}
+#ground{
+  background:repeating-linear-gradient(90deg,#b95d7d 0 25px,#d97898 25px 50px) !important;
+}
+.flower{
+  filter:drop-shadow(0 2px 2px rgba(130,50,80,.18));
+}
+
+
+.lotsoDecor{
+  position:absolute; inset:0; z-index:3; pointer-events:none; overflow:hidden;
+}
+.lotsoDecor span{
+  position:absolute;
+  font-size:25px;
+  opacity:.65;
+  animation:floatLotso 4s ease-in-out infinite;
+}
+.lotsoDecor span:nth-child(1){left:4%;top:34%;animation-delay:.2s}
+.lotsoDecor span:nth-child(2){left:18%;top:18%;animation-delay:1s}
+.lotsoDecor span:nth-child(3){left:31%;top:31%;animation-delay:1.7s}
+.lotsoDecor span:nth-child(4){left:48%;top:16%;animation-delay:.6s}
+.lotsoDecor span:nth-child(5){right:25%;top:32%;animation-delay:1.3s}
+.lotsoDecor span:nth-child(6){right:10%;top:20%;animation-delay:2s}
+.lotsoDecor span:nth-child(7){right:4%;top:43%;animation-delay:.9s}
+.lotsoDecor span:nth-child(8){left:61%;top:43%;animation-delay:1.5s}
+@keyframes floatLotso{
+  0%,100%{transform:translateY(0) rotate(-4deg)}
+  50%{transform:translateY(-12px) rotate(5deg)}
+}
+
 </style>
 </head>
 <body>
 <div id="game">
+<div class="lotsoDecor" aria-hidden="true">
+  <span>🍓</span><span>🩷</span><span>🌸</span><span>🍓</span>
+  <span>🧸</span><span>🌷</span><span>🍓</span><span>🩷</span>
+</div>
+
   <audio id="bgMusic" src="song.mp3" loop preload="auto"></audio>
 
   <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
